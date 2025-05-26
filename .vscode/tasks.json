@@ -1,25 +1,11 @@
 {
+  "version": "2.0.0",
   "tasks": [
     {
-      "type": "shell",
-      "label": "g++.exe build active file",
-      "command": "C:\\MinGW\\bin\\g++.exe",
-      "args": [
-        "-g",
-        "${file}",
-        "-o",
-        "${fileDirname}/${fileBasenameNoExtension}.exe"
-      ],
-      "options": {
-        "cwd": "C:\\MinGW\\bin"
-      }
-    },
-    {
       "type": "cppbuild",
-      "label": "C/C++: g++.exe compilar archivo activo",
+      "label": "Compilar con MSYS2 (ucrt64)",
       "command": "C:\\msys64\\ucrt64\\bin\\g++.exe",
       "args": [
-        "-fdiagnostics-color=always",
         "-g",
         "${file}",
         "-o",
@@ -28,12 +14,12 @@
       "options": {
         "cwd": "${fileDirname}"
       },
-      "problemMatcher": [
-        "$gcc"
-      ],
-      "group": "build",
-      "detail": "Tarea generada por el depurador."
+      "problemMatcher": ["$gcc"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "detail": "Compilación con MSYS2 ucrt64"
     }
-  ],
-  "version": "2.0.0"
+  ]
 }

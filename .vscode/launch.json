@@ -2,17 +2,22 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "g++.exe - Build and debug active file",
+      "name": "Debug con MSYS2 (ucrt64)",
       "type": "cppdbg",
       "request": "launch",
       "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
       "args": [],
       "stopAtEntry": false,
-      "cwd": "${workspaceFolder}",
-      "environment": [],
+      "cwd": "${fileDirname}",
+      "environment": [
+        {
+          "name": "PATH",
+          "value": "C:\\msys64\\ucrt64\\bin;${env:PATH}"
+        }
+      ],
       "externalConsole": false,
       "MIMode": "gdb",
-      "miDebuggerPath": "C:\\MinGW\\bin\\gdb.exe",
+      "miDebuggerPath": "C:\\msys64\\ucrt64\\bin\\gdb.exe",
       "setupCommands": [
         {
           "description": "Enable pretty-printing for gdb",
@@ -20,33 +25,7 @@
           "ignoreFailures": true
         }
       ],
-      "preLaunchTask": "g++.exe build active file"
-    },
-    {
-      "name": "C/C++: g++.exe Compilar y depurar el archivo activo",
-      "type": "cppdbg",
-      "request": "launch",
-      "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
-      "args": [],
-      "stopAtEntry": false,
-      "cwd": "${fileDirname}",
-      "environment": [],
-      "externalConsole": false,
-      "MIMode": "gdb",
-      "miDebuggerPath": "C:\\msys64\\ucrt64\\bin\\gdb.exe",
-      "setupCommands": [
-        {
-          "description": "Habilitar la impresión con sangría para gdb",
-          "text": "-enable-pretty-printing",
-          "ignoreFailures": true
-        },
-        {
-          "description": "Establecer tipo de desensamblado en Intel",
-          "text": "-gdb-set disassembly-flavor intel",
-          "ignoreFailures": true
-        }
-      ],
-      "preLaunchTask": "C/C++: g++.exe compilar archivo activo"
+      "preLaunchTask": "Compilar con MSYS2 (ucrt64)"
     }
   ]
 }
